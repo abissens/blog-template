@@ -1,0 +1,33 @@
+{{#> layout}}
+{{#*inline "title"}} Abissens blog {{/inline}}
+{{#*inline "content"}}
+    {{#each (bundle_query "{path: '**/*.html'}")}}
+      <div class="page-card">
+        <div class="page-card-header">
+            <a href="{{this.page_uri}}" class="title"><h4>{{this.metadata.title}}</h4></a>
+            <div class="authors">
+                <h3 class="publishing-date">{{ date_format this.metadata.publishing_date.timestamp }}</h3>
+                {{#if this.metadata.authors}}
+                        by
+                        {{#each this.metadata.authors}}
+                            <h3>{{this}}</h3>
+                            {{#unless @last}},{{/unless}}
+                        {{/each}}
+                {{/if}}
+            </div>
+            <div class="tags">
+                {{#each this.metadata.tags}}
+                    <h3>{{this}}</h3>
+                {{/each}}
+            </div>
+        </div>
+        <div class="page-card-summary">
+            {{this.metadata.summary}}
+        </div>
+        <div class="page-card-footer">
+            <a href="{{this.page_uri}}" class="read-more">Read more</a>
+        </div>
+      </div>
+    {{/each}}
+{{/inline}}
+{{/layout}}
