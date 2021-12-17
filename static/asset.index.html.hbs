@@ -1,5 +1,8 @@
 {{#> layout}}
 {{#*inline "title"}} Abissens blog {{/inline}}
+{{#*inline "head"}}
+    <script src="/index.js"></script>
+{{/inline}}
 {{#*inline "content"}}
     {{#each (bundle_query "{path: '**/*.html'}")}}
       <div class="page-card">

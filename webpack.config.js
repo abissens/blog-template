@@ -3,9 +3,14 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     mode: 'production',
-    entry: './src/index.js',
+    entry: {
+        common: './src/common.ts',
+        index: './src/index.ts',
+        page: './src/page.ts',
+    },
+    devtool: 'inline-source-map',
     output: {
-        filename: 'index.js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'output'),
     },
     module: {
@@ -25,7 +30,15 @@ module.exports = {
                     'css-loader',
                 ],
             },
+            {
+                test: /\.ts$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
         ],
+    },
+    resolve: {
+        extensions: ['.ts', '.js'],
     },
     plugins: [
         new CopyPlugin({
