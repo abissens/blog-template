@@ -1,5 +1,5 @@
 query: {path: '**/*.html'}
-limit: 2
+limit: 5
 groupBy: tag
 path: 'tags/{{tag}}/{{index}}/index.html'
 firstPagePath: 'tags/{{tag}}/index.html'
