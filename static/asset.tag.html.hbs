@@ -35,9 +35,9 @@
     <div class="paginator">
         {{#each selection.indexes}}
             {{#if @first}}
-                <a href="/" class="read-more {{#if this.1}}selected{{/if}}">{{this.0}}</a>
+                <a href="/tags/{{../selection.tag}}/" class="read-more {{#if this.1}}selected{{/if}}">{{this.0}}</a>
             {{else}}
-                <a href="/{{this.0}}/" class="read-more {{#if this.1}}selected{{/if}}">{{this.0}}</a>
+                <a href="/tags/{{../selection.tag}}/{{this.0}}/" class="read-more {{#if this.1}}selected{{/if}}">{{this.0}}</a>
             {{/if}}
         {{/each}}
     </div>
