@@ -1,0 +1,4 @@
+query: {path: '**/*.html'}
+limit: 5
+path: '{{index}}/index.html'
+firstPagePath: 'index.html'
