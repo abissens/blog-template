@@ -1,0 +1,33 @@
+
+{{#> layout}}
+{{#*inline "title"}} Abissens blog {{/inline}}
+{{#*inline "head"}}
+    <script src="/index.js"></script>
+{{/inline}}
+{{#*inline "content"}}
+    {{#each (bundle_archive_query "{path: '**/*.html'}") }}
+        <div class="page-archive-wrapper">
+          <div class="page-archive-year"><h3>{{this.year}}</h3> </div>
+          {{#each this.months }}
+                {{#each this.pages }}
+                  <div class="page-card">
+                    <div class="page-card-header">
+                        <a href="{{this.page_uri}}" class="title"><h4>{{this.metadata.title}}</h4></a>
+                        <div class="authors">
+                            <h3 class="publishing-date">{{ date_format this.metadata.publishing_date.timestamp }}</h3>
+                            {{#if this.metadata.authors}}
+                                    by
+                                    {{#each this.metadata.authors}}
+                                        <h3>{{this}}</h3>
+                                        {{#unless @last}},{{/unless}}
+                                    {{/each}}
+                            {{/if}}
+                        </div>
+                    </div>
+                  </div>
+                {{/each}}
+          {{/each}}
+        </div>
+    {{/each}}
+{{/inline}}
+{{/layout}}
