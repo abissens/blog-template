@@ -2,7 +2,7 @@
 {{#> layout}}
 {{#*inline "title"}} Abissens blog {{/inline}}
 {{#*inline "head"}}
-    <script src="/index.js"></script>
+    <script src="{{env "base_uri"}}/index.js"></script>
 {{/inline}}
 {{#*inline "content"}}
     {{#each (bundle_archive_query "{path: '**/*.html'}") }}
@@ -12,7 +12,7 @@
                 {{#each this.pages }}
                   <div class="page-card">
                     <div class="page-card-header">
-                        <a href="{{this.page_uri}}" class="title"><h4>{{this.metadata.title}}</h4></a>
+                        <a href="{{env "base_uri"}}{{this.page_uri}}" class="title"><h4>{{this.metadata.title}}</h4></a>
                         <div class="authors">
                             <h3 class="publishing-date">{{ date_format this.metadata.publishing_date.timestamp }}</h3>
                             {{#if this.metadata.authors}}

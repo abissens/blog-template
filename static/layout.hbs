@@ -5,12 +5,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <title>{{> title}}</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{env "base_uri"}}/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{env "base_uri"}}/favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="{{env "base_uri"}}/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <script src="/common.js"></script>
+    <script type="text/javascript">
+        window.BASE_URI = "{{env "base_uri"}}";
+    </script>
+    <script src="{{env "base_uri"}}/common.js"></script>
     {{> head}}
 </head>
 <body>
@@ -18,7 +21,7 @@
     <div class="inner-wrapper">
         <div class="inner-header">
             <div class="banner">
-                <a href="/" ><img src="/images/abissens-small.png" alt="avatar" /></a>
+                <a href="{{env "base_uri"}}/" ><img src="{{env "base_uri"}}/images/abissens-small.png" alt="avatar" /></a>
                 <div class="title">
                     <h3>Abissens blog</h3>
                     <h4>Some drafts about software making</h4>
@@ -26,8 +29,8 @@
             </div>
 
             <div class="header-menu">
-                <a href="/archive/" >archive</a>
-                <a href="/about" >about</a>
+                <a href="{{env "base_uri"}}/archive/" >archive</a>
+                <a href="{{env "base_uri"}}/about" >about</a>
             </div>
         </div>
         <div class="inner-content">

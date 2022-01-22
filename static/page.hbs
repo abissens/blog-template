@@ -3,7 +3,7 @@
     {{page.metadata.title}}
 {{/inline}}
 {{#*inline "head"}}
-    <script src="/page.js"></script>
+    <script src="{{env "base_uri"}}/page.js"></script>
 {{/inline}}
 {{#*inline "content"}}
 <div class="page-wrapper">
@@ -22,7 +22,7 @@
             </div>
             <div class="tags">
                 {{#each page.metadata.tags}}
-                    <h3><a href="/tags/{{uri_string this}}/">{{this}}</a></h3>
+                    <h3><a href="{{env "base_uri"}}/tags/{{uri_string this}}/">{{this}}</a></h3>
                 {{/each}}
             </div>
         </div>

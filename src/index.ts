@@ -1,2 +1,3 @@
 import {PagesBundle} from './app/indexes';
-new PagesBundle().allPages().then(p => console.dir(p));
+// @ts-ignore
+new PagesBundle().allPages(window.BASE_URI).then(p => console.dir(p));

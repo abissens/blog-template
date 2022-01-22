@@ -113,8 +113,8 @@ export class Page {
 }
 
 export class PagesBundle {
-    public async allPages(force: boolean = false): Promise<Array<Page>> {
-        const rawPages = await fetch('/all_pages.json');
+    public async allPages(baseUri: string, force: boolean = false): Promise<Array<Page>> {
+        const rawPages = await fetch(`${baseUri}/all_pages.json`);
         if (rawPages.ok) {
             return (await rawPages.json() as Array<unknown>).map(u => Page.fromUnknown(u))
         }

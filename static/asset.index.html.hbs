@@ -1,13 +1,13 @@
 {{#> layout}}
 {{#*inline "title"}} Abissens blog {{/inline}}
 {{#*inline "head"}}
-    <script src="/index.js"></script>
+    <script src="{{env "base_uri"}}/index.js"></script>
 {{/inline}}
 {{#*inline "content"}}
     {{#each selection.pages}}
       <div class="page-card">
         <div class="page-card-header">
-            <a href="{{this.page_uri}}" class="title"><h4>{{this.metadata.title}}</h4></a>
+            <a href="{{env "base_uri"}}{{this.page_uri}}" class="title"><h4>{{this.metadata.title}}</h4></a>
             <div class="authors">
                 <h3 class="publishing-date">{{ date_format this.metadata.publishing_date.timestamp }}</h3>
                 {{#if this.metadata.authors}}
@@ -20,7 +20,7 @@
             </div>
             <div class="tags">
                 {{#each this.metadata.tags}}
-                    <h3><a href="/tags/{{uri_string this}}/">{{this}}</a></h3>
+                    <h3><a href="{{env "base_uri"}}/tags/{{uri_string this}}/">{{this}}</a></h3>
                 {{/each}}
             </div>
         </div>
@@ -28,7 +28,7 @@
             {{this.metadata.summary}}
         </div>
         <div class="page-card-footer">
-            <a href="{{this.page_uri}}" class="read-more">Read more</a>
+            <a href="{{env "base_uri"}}{{this.page_uri}}" class="read-more">Read more</a>
         </div>
       </div>
     {{/each}}
@@ -36,9 +36,9 @@
         <div class="paginator">
             {{#each selection.indexes}}
                 {{#if @first}}
-                    <a href="/" class="read-more {{#if this.1}}selected{{/if}}">{{this.0}}</a>
+                    <a href="{{env "base_uri"}}/" class="read-more {{#if this.1}}selected{{/if}}">{{this.0}}</a>
                 {{else}}
-                    <a href="/{{this.0}}/" class="read-more {{#if this.1}}selected{{/if}}">{{this.0}}</a>
+                    <a href="{{env "base_uri"}}/{{this.0}}/" class="read-more {{#if this.1}}selected{{/if}}">{{this.0}}</a>
                 {{/if}}
             {{/each}}
         </div>
