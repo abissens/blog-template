@@ -2,4 +2,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor nulla a
 
 Fusce erat diam, vehicula eu ipsum quis, pulvinar porttitor orci. Ut pulvinar ut augue feugiat facilisis. Sed sed sollicitudin orci. Mauris consequat eleifend est nec sagittis. Etiam sed lorem ligula. Curabitur fringilla ligula eget pulvinar congue. In hac habitasse platea dictumst. Nunc non maximus quam. Sed congue ex sed laoreet mattis. Curabitur aliquam nisi et sapien porttitor, sit amet sodales mi molestie.
 
-![Fusce erat diam!](./elefants.jpg "Fusce erat diam")
+<img alt="Fusce erat diam!" src="./elefants.jpg" title="Fusce erat diam" width="100%"/>

@@ -9,13 +9,9 @@
   display: flex;
   flex-direction: column;
   font-family: 'epilogueregular', serif;
+  font-size: 18px;
 }
 
-@media (max-width: 1000px) {
-  .inner-wrapper {
-    width: 100%;
-  }
-}
 .inner-header {
   display: flex;
   width: 100%;
@@ -99,4 +95,27 @@
   min-height: 300px;
   background-color: #3d89bb;
   box-shadow: inset 0 2px 2px 0 rgba(0,0,0,0.45);
+}
+
+
+@media (max-width: 1024px) {
+  .inner-wrapper {
+    width: 100%;
+    font-size: 28px;
+  }
+
+  .inner-header {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0;
+  }
+
+  .inner-header .banner {
+    border-bottom: 1px solid gray;
+    padding-bottom: 20px;
+  }
+
+  .inner-content {
+    padding: 50px;
+  }
 }
