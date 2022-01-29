@@ -5,7 +5,6 @@
   flex-direction: column;
   padding: 10px;
   box-sizing: border-box;
-  text-align: center;
 }
 
 .page-card-header .title h4 {
@@ -31,7 +30,6 @@
   display: flex;
   flex-wrap: wrap;
   margin-top: 2px;
-  justify-content: center;
 }
 
 .page-card-header .tags h3 {
@@ -89,5 +87,13 @@
 @media (max-width: @mobile-bp) {
   .page-wrapper .page-content {
     padding: 50px;
+  }
+
+  .page-card {
+    text-align: center;
+  }
+
+  .page-card-header .tags {
+    justify-content: center;
   }
 }
