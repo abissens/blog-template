@@ -1,3 +1,5 @@
+@import 'variables.less';
+
 @font-face {
   font-family: 'epilogueregular';
   src: url('fonts/epilogue-variablefont_wght-webfont.woff2') format('woff2'),
@@ -8,7 +10,11 @@
 
 body {
   font-family: arial, sans-serif;
-  background-color: #3d89bb;
+  background-color: @primary-color;
+
+  [data-theme="dark"] & {
+    background-color: @dark-primary-color;
+  }
 }
 
 h1,h2,h3,h4,h5 {

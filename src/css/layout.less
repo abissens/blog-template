@@ -2,7 +2,13 @@
 
 .outer-wrapper {
   padding: 20px 0 50px 0;
-  background-color: white;
+  background-color: @background-color;
+  color: @contrast-color;
+
+  [data-theme="dark"] & {
+    color: @background-color;
+    background-color: @dark-background-color;
+  }
 }
 
 .inner-wrapper {
@@ -41,21 +47,31 @@
 }
 .inner-header .banner .title h4 {
   font-size: 0.9em;
-  color: gray;
+  color: @lint-color;
+
+  [data-theme="dark"] & {
+    color: @dark-lint-color;
+  }
 }
 
 .inner-header a {
   text-decoration: none;
-  color: black;
+  color: @contrast-color;
+  &:hover {
+    color: @primary-color;
+  }
+  [data-theme="dark"] & {
+    color: @background-color;
+    &:hover {
+      color: @dark-lint-color;
+    }
+  }
 }
 
-.inner-header a:hover {
-  color: darkslateblue;
-}
 
 .inner-header .header-menu {
   display: flex;
-  align-items: end;
+  align-items: center;
   margin-bottom: 5px;
   flex: 0 0 auto;
 }
@@ -77,28 +93,62 @@
   font-size: 0.9em;
   display: block;
   background-color: lightblue;
-  color: white;
+  color: @background-color;
   border-radius: 8px;
   font-weight: bold;
   transition: 0.3s;
 
   &.selected {
-    background-color: black;
-    color: white;
+    background-color: @contrast-color;
+    color: @background-color;
   }
 
   &:hover {
-    background-color: cornflowerblue;
-    color: white;
+    background-color: @primary-color-reduced;
+    color: @background-color;
+  }
+
+  [data-theme="dark"] & {
+    background-color: black;
+    color: @dark-contrast-color;
+
+    &.selected {
+      background-color: @dark-contrast-color;
+      color: @dark-background-color;
+    }
+
+    &:hover {
+      background-color: @dark-primary-color-reduced;
+      color: @dark-contrast-color;
+    }
   }
 }
 
 .outer-footer {
   min-height: 300px;
-  background-color: #3d89bb;
+  background-color: @primary-color;
   box-shadow: inset 0 2px 2px 0 rgba(0,0,0,0.45);
+
+  [data-theme="dark"] & {
+    background-color: @dark-primary-color;
+    border-top: 2px solid white;
+    box-shadow: none;
+  }
 }
 
+.dark-light-mode {
+  margin: 5px;
+  background: transparent url('./assets/dark-button.png') no-repeat center top;
+  overflow: hidden;
+  width: 18px;
+  height: 16px;
+  border: none;
+  cursor: pointer;
+
+  [data-theme="dark"] & {
+    background: transparent url('./assets/light-button.png') no-repeat center top;
+  }
+}
 
 @media (max-width: @mobile-bp) {
   .inner-wrapper {

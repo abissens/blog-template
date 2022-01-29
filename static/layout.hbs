@@ -5,14 +5,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <title>{{> title}}</title>
+    <script type="text/javascript">
+        window.BASE_URI = "{{env "base_uri"}}";
+        const isDarkMode = localStorage.getItem('isDarkMode');
+        if(isDarkMode) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
+
     <link rel="icon" type="image/png" sizes="32x32" href="{{env "base_uri"}}/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="{{env "base_uri"}}/favicon/favicon-16x16.png">
     <link rel="mask-icon" href="{{env "base_uri"}}/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <script type="text/javascript">
-        window.BASE_URI = "{{env "base_uri"}}";
-    </script>
     <script src="{{env "base_uri"}}/common.js"></script>
     {{> head}}
 </head>
@@ -31,6 +36,7 @@
             <div class="header-menu">
                 <a href="{{env "base_uri"}}/archive/" >archive</a>
                 <a href="{{env "base_uri"}}/about" >about</a>
+                <button class="dark-light-mode" id="dark-light-mode" title="dark/light mode" ></button>
             </div>
         </div>
         <div class="inner-content">
