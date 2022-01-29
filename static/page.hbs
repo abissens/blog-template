@@ -24,7 +24,13 @@
                 {{#each page.metadata.tags}}
                     <h3><a href="{{env "base_uri"}}/tags/{{uri_string this}}/">{{this}}</a></h3>
                 {{/each}}
+                <div class="social">
+                    {{#if page.metadata.data.twitter}}
+                        <a href="{{page.metadata.data.twitter}}" target="blank" class="twitter-link">{{> partials/twitter.svg }}</a>
+                    {{/if}}
+                </div>
             </div>
+
         </div>
     </div>
     <div class="page-content">

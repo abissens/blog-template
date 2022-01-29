@@ -150,6 +150,62 @@
   }
 }
 
+.twitter-link, .github-link {
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: @lint-color;
+    [data-theme="dark"]  & {
+      fill: @dark-contrast-color;
+    }
+  }
+}
+
+
+.twitter-link {
+  &:hover {
+    svg {
+      fill: #1D9BF0FF;
+      [data-theme="dark"]  & {
+        fill: #1D9BF0FF;
+      }
+    }
+  }
+}
+
+.github-link {
+  &:hover {
+    svg {
+      fill: black;
+      [data-theme="dark"]  & {
+        fill: black;
+      }
+    }
+  }
+}
+
+.social {
+  margin-left: 10px;
+}
+
+.footer-base-menu {
+  padding-top: 15px;
+  width: 100%;
+  text-align: center;
+
+  .twitter-link, .github-link {
+    padding: 5px;
+    svg {
+      width: 26px;
+      height: 26px;
+      fill: white;
+      [data-theme="dark"]  & {
+        fill: white;
+      }
+    }
+  }
+}
+
 @media (max-width: @mobile-bp) {
   .inner-wrapper {
     width: 100%;
