@@ -1,3 +1,5 @@
+@import 'variables.less';
+
 .outer-wrapper {
   padding: 20px 0 50px 0;
   background-color: white;
@@ -9,7 +11,7 @@
   display: flex;
   flex-direction: column;
   font-family: 'epilogueregular', serif;
-  font-size: 18px;
+  font-size: @base-font-size;
 }
 
 .inner-header {
@@ -38,7 +40,7 @@
   font-weight: bold;
 }
 .inner-header .banner .title h4 {
-  font-size: 14px;
+  font-size: 0.9em;
   color: gray;
 }
 
@@ -72,7 +74,7 @@
   text-decoration: none;
   padding: 10px;
   margin: 2px;
-  font-size: 14px;
+  font-size: 0.9em;
   display: block;
   background-color: lightblue;
   color: white;
@@ -98,10 +100,10 @@
 }
 
 
-@media (max-width: 1024px) {
+@media (max-width: @mobile-bp) {
   .inner-wrapper {
     width: 100%;
-    font-size: 28px;
+    font-size: @mobile-base-font-size;
   }
 
   .inner-header {
@@ -111,11 +113,10 @@
   }
 
   .inner-header .banner {
-    border-bottom: 1px solid gray;
     padding-bottom: 20px;
   }
 
-  .inner-content {
+  .inner-content-wrapper {
     padding: 50px;
   }
 }

@@ -4,6 +4,7 @@
     <script src="{{env "base_uri"}}/index.js"></script>
 {{/inline}}
 {{#*inline "content"}}
+  <div class="inner-content-wrapper">
     {{#each selection.pages}}
       <div class="page-card">
         <div class="page-card-header">
@@ -43,5 +44,6 @@
             {{/each}}
         </div>
     {{/if}}
+  </div>
 {{/inline}}
 {{/layout}}

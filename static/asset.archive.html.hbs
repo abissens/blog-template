@@ -5,6 +5,7 @@
     <script src="{{env "base_uri"}}/index.js"></script>
 {{/inline}}
 {{#*inline "content"}}
+  <div class="inner-content-wrapper">
     {{#each (bundle_archive_query "{path: '**/*.html'}") }}
         <div class="page-archive-wrapper">
           <div class="page-archive-year"><h3>{{this.year}}</h3> </div>
@@ -29,5 +30,6 @@
           {{/each}}
         </div>
     {{/each}}
+</div>
 {{/inline}}
 {{/layout}}
